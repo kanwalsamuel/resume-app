@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Resume Builder</title>
+</head>
+<body>
+    <header>
+        <h1>Dynamic Resume Builder</h1>
+    </header>
+
+    <main>
+        <section id="personal-info">
+            <h2>Personal Information</h2>
+          
+            <!-- Image upload input and preview -->
+<div>
+    <input type="file" id="photoUpload" accept="image/*" />
+    <img src="" alt="Personal Photo" id="photoPreview" class="personal-photo" />
+</div>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div> 
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" required>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div id="education-fields">
+                <div class="education-entry">
+                    <input type="text" placeholder="Degree" required>
+                    <input type="text" placeholder="Institution" required>
+                    <button type="button" onclick="removeSection(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addEducation()">Add Education</button>
+        </section>
+
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div id="experience-fields">
+                <div class="experience-entry">
+                    <input type="text" placeholder="Job Title" required>
+                    <input type="text" placeholder="Company" required>
+                    <textarea placeholder="Job Description"></textarea>
+                    <button type="button" onclick="removeSection(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addExperience()">Add Experience</button>
+        </section>
+
+        
+        
+          
+            <section id="skills">
+                <h2>Skills</h2>
+                
+                <div id="hard-skills-fields">
+                    <h3>Hard Skills</h3>
+                    <div class="skill-entry">
+                        <textarea placeholder="List your hard skills" required></textarea>
+                        <button type="button" onclick="removeSection(this)">Remove</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addHardSkill()">Add Hard Skill</button>
+            
+                <div id="soft-skills-fields">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-entry">
+                        <textarea placeholder="List your soft skills" required></textarea>
+                        <button type="button" onclick="removeSection(this)">Remove</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addSoftSkill()">Add Soft Skill</button>
+            </section> 
+            
+
+        <section id="interests">
+            <h2>Interests</h2>
+            <textarea id="interests" placeholder="List your interests"></textarea>
+            <button type="button" onclick="removeSection(this)">Remove</button>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <div id="language-fields">
+                <div class="language-entry">
+                    <input type="text" placeholder="Language" required>
+                    <button type="button" onclick="removeSection(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addLanguage()">Add Language</button>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <div id="achievement-fields">
+                <div class="achievement-entry">
+                    <input type="text" placeholder="Achievement" required>
+                    <button type="button" onclick="removeSection(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addAchievement()">Add Achievement</button>
+        </section>
+
+        <section id="references">
+            <h2>References</h2>
+            <textarea id="references" placeholder="List your references"></textarea>
+        </section>
+
+        <section id="preview">
+            <h2>Preview</h2>
+
+
+
+
+            <div id="preview-output">
+                <!-- Circular Profile Image -->
+                <img id="preview-image" class="preview-image" src="" alt="Profile Image">
+                
+                <h3>Name: <span id="preview-name"></span></h3>
+                <p>Email: <span id="preview-email"></span></p>
+                <p>Phone: <span id="preview-phone"></span></p>
+            
+                <h4>Education:</h4>
+                <ul id="preview-education"></ul>
+            
+                <h4>Experience:</h4>
+                <ul id="preview-experience"></ul>
+            
+                <h4>Skills:</h4>
+                <p>Hard Skills: <span id="preview-hard-skills"></span></p>
+                <p>Soft Skills: <span id="preview-soft-skills"></span></p>
+            
+                <h4>Interests:</h4>
+                <p><span id="preview-interests"></span></p>
+            
+                <h4>Languages:</h4>
+                <ul id="preview-languages"></ul>
+            
+                <h4>Achievements:</h4>
+                <ul id="preview-achievements"></ul>
+            
+                <h4>References:</h4>
+                <p><span id="preview-references"></span></p>
+            </div>
+            
+        </section>
+
+        <button id="generateButton" onclick="generateCV()">Generate Resume</button>
+        <button id="downloadButton" onclick="printCV()">Download Resume</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Resume Builder</p>
+    </footer>
+
+</body>
+</html>
